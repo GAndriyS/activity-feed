@@ -127,7 +127,14 @@ const styles = {
   },
   textField: {
     width: "100%",
-    backgroundColor: theme.palette.background.default
+    backgroundColor: theme.palette.background.default,
+    '& .MuiInputBase-root': {
+      '&.Mui-focused': {
+        '& fieldset': {
+          borderColor: theme.palette.success.main
+        },
+      },
+    },
   },
   footer: {
     display: "flex",

@@ -47,6 +47,7 @@ export default function InputField() {
       <Card sx={styles.container}
         ref={wrapperRef}
         onFocus={() => setIsFocused(true)}
+        data-testid="card"
       >
         <TextField
           multiline
@@ -58,24 +59,56 @@ export default function InputField() {
         />
         {isFocused && <Box sx={styles.footer}>
           <Box sx={styles.icons}>
-            <IconButton size="small" sx={styles.icon(type === NoteType.message)} onClick={() => setType(NoteType.message)}>
+            <IconButton
+              data-testid="btn-message"
+              size="small"
+              sx={styles.icon(type === NoteType.message)}
+              onClick={() => setType(NoteType.message)}
+            >
               <ChatBubbleIcon fontSize="small" />
             </IconButton>
-            <IconButton size="small" sx={styles.icon(type === NoteType.phone)} onClick={() => setType(NoteType.phone)}>
+            <IconButton
+              data-testid="btn-phone"
+              size="small"
+              sx={styles.icon(type === NoteType.phone)}
+              onClick={() => setType(NoteType.phone)}
+            >
               <PhoneIcon fontSize="small" />
             </IconButton>
-            <IconButton size="small" sx={styles.icon(type === NoteType.coffee)} onClick={() => setType(NoteType.coffee)}>
+            <IconButton
+              data-testid="btn-coffee"
+              size="small"
+              sx={styles.icon(type === NoteType.coffee)}
+              onClick={() => setType(NoteType.coffee)}
+            >
               <LocalCafeIcon fontSize="small" />
             </IconButton>
-            <IconButton size="small" sx={styles.icon(type === NoteType.beer)} onClick={() => setType(NoteType.beer)}>
+            <IconButton
+              data-testid="btn-beer"
+              size="small"
+              sx={styles.icon(type === NoteType.beer)}
+              onClick={() => setType(NoteType.beer)}
+            >
               <SportsBarIcon fontSize="small" />
             </IconButton>
-            <IconButton size="small" sx={styles.icon(type === NoteType.meetingNote)} onClick={() => setType(NoteType.meetingNote)}>
+            <IconButton
+              data-testid="btn-meetingNote"
+              size="small"
+              sx={styles.icon(type === NoteType.meetingNote)}
+              onClick={() => setType(NoteType.meetingNote)}
+            >
               <PersonIcon fontSize="small" />
             </IconButton>
           </Box>
 
-          <Button variant="contained" color="success" size="small" sx={styles.button} onClick={addNote}>Submit</Button>
+          <Button
+            variant="contained"
+            color="success"
+            size="small"
+            sx={styles.button}
+            onClick={addNote}
+            data-testid="btn-submit"
+          >Submit</Button>
         </Box>}
       </Card>
     </Box>

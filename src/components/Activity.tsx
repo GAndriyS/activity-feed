@@ -16,8 +16,6 @@ const Activity = memo(({ note }: Props) => {
   const { type, content, author, target } = note;
   const [isHovered, setIsHovered] = useState(false);
 
-  console.log("Activity rendered", note.id);
-
   const deleteNote = useDeleteNote();
 
   const userName = "Andrii Gorbatiuk";

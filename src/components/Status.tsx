@@ -27,7 +27,7 @@ export default function Status({ timestamp, type }: Props) {
   };
 
   const definedStatus = <>
-    <Typography sx={{ marginTop: "7px", textAlign: "right" }}>{formatTimestamp(timestamp as string)}</Typography>
+    <Typography sx={styles.timestamp}>{formatTimestamp(timestamp as string)}</Typography>
     {statusIcon[type as NoteType]}
   </>
 
@@ -54,5 +54,9 @@ const styles = {
     border: `2px solid ${theme.palette.grey[300]}`,
     padding: "7px",
     backgroundColor: theme.palette.background.default
+  },
+  timestamp: {
+    marginTop: "7px",
+    textAlign: "right"
   }
 }
